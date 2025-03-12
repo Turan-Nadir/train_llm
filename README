@@ -1,0 +1,23 @@
+Save the scripts:
+
+Save the main Python script as bart_finetune.py
+Save the launch script as launch_training.sh
+Save the setup script as setup_environment.sh
+
+
+Modify the setup script:
+
+Update the MACHINES array with the actual IP addresses of your 10 PCs
+Update the USERNAME variable with your SSH username
+
+
+Run the setup script on your main PC:
+
+chmod +x setup_environment.sh
+./setup_environment.sh
+
+Start the training:
+
+On the main PC (node 0): cd ~/bart-uzbek-finetuning && ./launch_training.sh 0
+On each worker PC (nodes 1-9): cd ~/bart-uzbek-finetuning && ./launch_training.sh <node_rank>
+Replace <node_rank> with the corresponding node number (1-9)
